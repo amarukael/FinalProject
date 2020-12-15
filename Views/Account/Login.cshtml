@@ -3,9 +3,6 @@
     ViewBag.Title = "Login";
     //Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Login</h2>
-
 <div class="row justify-content-md-center">
     <div class="col-md-4">
         <div class="card">
@@ -13,7 +10,7 @@
                 Login
             </div>
             <div class="card-body">
-                @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                @using (Html.BeginForm("Login", "Account", FormMethod.Post))
                 {
                     @Html.AntiForgeryToken()
                     <div class="form-group">

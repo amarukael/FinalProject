@@ -12,13 +12,13 @@ namespace FinalProject.Models
     {
         [Key, Column(Order = 1)]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-        public int IdUser { get; set; }
+        public int idUser { get; set; }
         [Required]
         [StringLength(50, MinimumLength = 3)]
-        public string NamaDepan { get; set; }
+        public string FirstName { get; set; }
         [Required]
         [StringLength(50, MinimumLength = 3)]
-        public string NamaBelakang { get; set; }
+        public string LastName { get; set; }
         [Required]
         [RegularExpression(@"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}")]
         public string Email { get; set; }
@@ -34,7 +34,7 @@ namespace FinalProject.Models
         public string ConfirmPassword { get; set; }
         public string FullName()
         {
-            return this.NamaDepan + " " + this.NamaBelakang;
+            return this.FirstName + " " + this.LastName;
         }
     }
 }

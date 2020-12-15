@@ -15,7 +15,7 @@ namespace FinalProject.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            if (Session["IdUser"] != null)
+            if (Session["idUser"] != null)
             {
                 return View();
             }
@@ -81,9 +81,9 @@ namespace FinalProject.Controllers
                 if (data.Count() > 0)
                 {
                     //add session
-                    Session["NamaLengkap"] = data.FirstOrDefault().NamaDepan + " " + data.FirstOrDefault().NamaBelakang;
+                    Session["FullName"] = data.FirstOrDefault().FirstName + " " + data.FirstOrDefault().LastName;
                     Session["Email"] = data.FirstOrDefault().Email;
-                    Session["IdUser"] = data.FirstOrDefault().IdUser;
+                    Session["idUser"] = data.FirstOrDefault().idUser;
                     return RedirectToAction("Index");
                 }
                 else
